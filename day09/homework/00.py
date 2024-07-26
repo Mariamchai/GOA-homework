@@ -1,0 +1,24 @@
+one = 9>7
+two = 10>3
+three = 13<15
+four=9<7
+print(one and two)
+print(three and four)
+print(two and one)
+print(four and three)
+print(two and three)
+print(one and four)
+print(two and two)
+print(one and one)
+print(four and four)
+print(three and three)
+print(one or two)
+print(three or four)
+print(two or one)
+print(four or three)
+print(two or three)
+print(one or four)
+print(two or two)
+print(one or one)
+print(four or four)
+print(three or three)

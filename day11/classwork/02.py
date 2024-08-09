@@ -1,9 +1,10 @@
 ask=input("do you want to continue?")
-"yes"
-"no"
-while ask != "yes" or "no":
+yes="yes"
+no="no"
+while ask != yes and ask!=no:
     ask=input("do you want to continue?")
-if ask ==  "yes":
-    ask=print("ok")
-elif ask == "no":
-    ask=input("press enter to exit")
+if ask ==  yes:
+    print("ok")
+else:
+    print("ok")
+

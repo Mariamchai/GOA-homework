@@ -6,3 +6,4 @@ print(h.capitalize())
 k=input("enter a number with uppercase")
 j=k.lower()
 print(j)
+guess=''

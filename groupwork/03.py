@@ -10,9 +10,7 @@ guesses=""
 while turns > 0:         
 
     
-    failed = 0             
-
-       
+    failed = 0                   
     for char in WORD:      
         if char in guesses:    
             print (char,end=""),    
@@ -22,13 +20,10 @@ while turns > 0:
     if failed == 0:        
         print ( " You won")
         break            
-    # ask the user go guess a character
     guess = input("guess a character: " ) 
 
-    # set the players guess to guesses
     guesses += guess                    
 
-    # if the guess is not found in the secret word
     if guess not in WORD:  
         turns -= 1        
         print ("Wrong")  

@@ -2,25 +2,18 @@ import pygame
 import sys
 import random
 
-# Initialize Pygame
 pygame.init()
 
-# Set up the game window
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Simple Game with Pygame")
 
-# Set up the clock for managing the frame rate
 clock = pygame.time.Clock()
 
-# Define colors
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
-
-# Player class
-
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -38,13 +31,10 @@ class Player(pygame.sprite.Sprite):
         if keys[pygame.K_RIGHT]:
             self.rect.x += self.speed
 
-        # Prevent the player from moving out of the window
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.right > 800:
             self.rect.right = 800
-
-# Obstacle class
 
 
 class Obstacle(pygame.sprite.Sprite):
@@ -63,9 +53,6 @@ class Obstacle(pygame.sprite.Sprite):
             self.rect.x = random.randint(0, 750)
             self.rect.y = random.randint(-100, -40)
             self.speed = random.randint(2, 6)
-
-# Button class
-
 
 class Button:
     def __init__(self, text, pos, font, bg="black", feedback=""):
@@ -96,38 +83,25 @@ class Button:
                     return True
         return False
 
-
-# Create a player instance
 player = Player()
 all_sprites = pygame.sprite.Group()
 all_sprites.add(player)
-
-# Create obstacle group
 obstacles = pygame.sprite.Group()
 for _ in range(10):
     obstacle = Obstacle()
     all_sprites.add(obstacle)
     obstacles.add(obstacle)
 
-# Initialize score
+
 score = 0
 font = pygame.font.SysFont(None, 36)
-
-
 def display_score():
     text = font.render(f"Score: {score}", True, WHITE)
     screen.blit(text, (10, 10))
-
-
-# Initialize start button
 start_button = Button("Start Game", (350, 275), 36,
                       bg=BLUE, feedback="Start Game")
-
-# Game state
 game_started = False
 game_over = False
-
-# Main game loop
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -138,36 +112,19 @@ while True:
                 game_started = True
                 game_over = False
                 score = 0
-
     if game_started and not game_over:
-        # Update all sprites
         all_sprites.update()
-
-        # Check for collisions
         if pygame.sprite.spritecollide(player, obstacles, False):
             game_over = True
-
-        # Increase score
         score += 1
-
-    # Fill the screen with a color (black)
     screen.fill(BLACK)
-
     if game_started:
-        # Draw all sprites
         all_sprites.draw(screen)
-
-        # Display the score
         display_score()
-
         if game_over:
             game_over_text = font.render("Game Over", True, WHITE)
             screen.blit(game_over_text, (350, 300))
     else:
         start_button.show()
-
-    # Update the display
     pygame.display.flip()
-
-    # Cap the frame rate
     clock.tick(60)

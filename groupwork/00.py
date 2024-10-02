@@ -10,7 +10,6 @@ while True != num:
         print("the number is higher")
     elif guess==num:
         print("congrats you got it right!")
-    else:
         break
 
  

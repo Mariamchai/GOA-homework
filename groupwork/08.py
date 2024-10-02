@@ -1,112 +1,130 @@
-import turtle as t
-import random as rd
+import pygame
+import sys
+import random
 
-t.bgcolor('yellow')
+pygame.init()
 
-caterpillar = t.Turtle()
-caterpillar.shape('square')
-caterpillar.color('red')
-caterpillar.speed(0)
-caterpillar.penup()
-caterpillar.hideturtle()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Simple Game with Pygame")
 
-leaf = t.Turtle()
-leaf_shape = ((0,0),(14,2),(18,6),(20,20),(6,18),(2,14))
-t.register_shape('leaf',leaf_shape)
-leaf.shape('leaf')
-leaf.color('green')
-leaf.penup()
-leaf.hideturtle()
-leaf.speed()
+clock = pygame.time.Clock()
 
+BLACK = (0, 0, 0)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill(GREEN)
+        self.rect = self.image.get_rect()
+        self.rect.center = (400, 550)
+        self.speed = 5
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= self.speed
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += self.speed
+
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > 800:
+            self.rect.right = 800
+
+
+class Obstacle(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((50, 50))
+        self.image.fill(RED)
+        self.rect = self.image.get_rect()
+        self.rect.x = random.randint(0, 750)
+        self.rect.y = random.randint(-100, -40)
+        self.speed = random.randint(2, 6)
+
+    def update(self):
+        self.rect.y += self.speed
+        if self.rect.top > 600:
+            self.rect.x = random.randint(0, 750)
+            self.rect.y = random.randint(-100, -40)
+            self.speed = random.randint(2, 6)
+
+class Button:
+    def __init__(self, text, pos, font, bg="black", feedback=""):
+        self.x, self.y = pos
+        self.font = pygame.font.SysFont("Arial", font)
+        if feedback == "":
+            self.feedback = "text"
+        else:
+            self.feedback = feedback
+        self.change_text(text, bg)
+
+    def change_text(self, text, bg="black"):
+        self.text = self.font.render(text, True, WHITE)
+        self.size = self.text.get_size()
+        self.surface = pygame.Surface(self.size)
+        self.surface.fill(bg)
+        self.surface.blit(self.text, (0, 0))
+        self.rect = pygame.Rect(self.x, self.y, self.size[0], self.size[1])
+
+    def show(self):
+        screen.blit(self.surface, (self.x, self.y))
+
+    def click(self, event):
+        x, y = pygame.mouse.get_pos()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if pygame.mouse.get_pressed()[0]:
+                if self.rect.collidepoint(x, y):
+                    return True
+        return False
+
+player = Player()
+all_sprites = pygame.sprite.Group()
+all_sprites.add(player)
+obstacles = pygame.sprite.Group()
+for _ in range(10):
+    obstacle = Obstacle()
+    all_sprites.add(obstacle)
+    obstacles.add(obstacle)
+
+
+score = 0
+font = pygame.font.SysFont(None, 36)
+def display_score():
+    text = font.render(f"Score: {score}", True, WHITE)
+    screen.blit(text, (10, 10))
+start_button = Button("Start Game", (350, 275), 36,
+                      bg=BLUE, feedback="Start Game")
 game_started = False
-text_turtle = t.Turtle()
-text_turtle.write('Press SPACE to start',align='center',font=('Arial',16,'bold'))
-text_turtle.hideturtle()
-
-score_turtle = t.Turtle()
-score_turtle.hideturtle()
-score_turtle.speed(0)
-
-def outside_window():
-    left_wall = -t.window_width()/2
-    right_wall = t.window_width()/2
-    top_wall = t.window_height()/2
-    bottom_wall = -t.window_height()/2
-    (x,y) = caterpillar.pos()
-    outside = x < left_wall or  x > right_wall or  y < bottom_wall or y > top_wall
-    return outside
-
-def game_over():
-    caterpillar.color('yellow')
-    leaf.color('yellow')
-    t.penup()
-    t.hideturtle()
-    t.write('GAME OVER!',align='center' , font=('Aerial',30,'normal'))
-
-def display_score(current_score):
-    score_turtle.clear()
-    score_turtle.penup()
-    x = (t.window_width() / 2)-50
-    y = (t.window_height() / 2)-50
-    score_turtle.setpos(x,y)
-    score_turtle.write(str(current_score) , align = 'right',font=('Arial',40,'bold'))
-
-def place_leaf():
-    leaf.hideturtle()
-    leaf.setx(rd.randint(-200,200))
-    leaf.sety(rd.randint(-200,200))
-    leaf.showturtle()
-
-def start_game():
-    global game_started
+game_over = False
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN and not game_started:
+            if start_button.click(event):
+                game_started = True
+                game_over = False
+                score = 0
+    if game_started and not game_over:
+        all_sprites.update()
+        if pygame.sprite.spritecollide(player, obstacles, False):
+            game_over = True
+        score += 1
+    screen.fill(BLACK)
     if game_started:
-        return
-    game_started = True
-
-    score = 0
-    text_turtle.clear()
-
-    caterpillar_speed = 2
-    caterpillar_length = 3
-    caterpillar.shapesize(1,caterpillar_length,1)
-    caterpillar.showturtle()
-    display_score(score)
-    place_leaf()
-
-    while True:
-        caterpillar.forward(caterpillar_speed)
-        if caterpillar.distance(leaf)<20:
-            place_leaf()
-            caterpillar_length = caterpillar_length + 1
-            caterpillar.shapesize(1,caterpillar_length,1)
-            caterpillar_speed = caterpillar_speed + 1
-            score = score + 10
-            display_score(score)
-        if outside_window():
-            game_over()
-            break
-
-def move_up():
-    if caterpillar.heading() == 0 or caterpillar.heading() == 180:
-        caterpillar.setheading(90)
-
-def move_down():
-    if caterpillar.heading() == 0 or caterpillar.heading() == 180:
-        caterpillar.setheading(270)
-
-def move_left():
-    if caterpillar.heading() == 90 or caterpillar.heading() == 270:
-        caterpillar.setheading(180)
-
-def move_right():
-    if caterpillar.heading() == 90 or caterpillar.heading() == 270:
-        caterpillar.setheading(0)
-
-t.onkey(start_game,'space')
-t.onkey(move_up,'Up')
-t.onkey(move_right,'Right')
-t.onkey(move_down,'Down')
-t.onkey(move_left,'Left')
-t.listen()
-t.mainloop()
+        all_sprites.draw(screen)
+        display_score()
+        if game_over:
+            game_over_text = font.render("Game Over", True, WHITE)
+            screen.blit(game_over_text, (350, 300))
+    else:
+        start_button.show()
+    pygame.display.flip()
+    clock.tick(60)

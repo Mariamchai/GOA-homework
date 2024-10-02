@@ -1,109 +1,104 @@
-from tkinter import HIDDEN, NORMAL, Tk, Canvas
-def toggle_eyes():
-    current_color = c.itemcget(eye_left, 'fill')
-    new_color = c.body_color if current_color == 'white' else 'white'
-    current_state = c.itemcget(pupil_left, 'state')
-    new_state = NORMAL if current_state == HIDDEN else HIDDEN
-    c.itemconfigure(pupil_left, state=new_state)
-    c.itemconfigure(pupil_right, state=new_state)
-    c.itemconfigure(eye_left, fill=new_color)
-    c.itemconfigure(eye_right, fill=new_color)
+from itertools import cycle
+from random import randrange
+from tkinter import Canvas, Tk, messagebox, font
 
-def blink():
-    toggle_eyes()
-    root.after(250, toggle_eyes)
-    root.after(3000, blink)
-
-def toggle_pupils():
-    if not c.eyes_crossed:
-        c.move(pupil_left, 10, -5)
-        c.move(pupil_right, -10, -5)
-        c.eyes_crossed = True
-    else:
-        c.move(pupil_left, -10, 5)
-        c.move(pupil_right, 10, 5)
-        c.eyes_crossed = False
-
-def toggle_tongue():
-    if not c.tongue_out:
-        c.itemconfigure(tongue_tip, state=NORMAL)
-        c.itemconfigure(tongue_main, state=NORMAL)
-        c.tongue_out = True
-    else:
-        c.itemconfigure(tongue_tip, state=HIDDEN)
-        c.itemconfigure(tongue_main, state=HIDDEN)
-        c.tongue_out = False
-def cheeky(event):
-    toggle_tongue()
-    toggle_pupils()
-    hide_happy(event)
-    root.after(1000, toggle_tongue)
-    root.after(1000, toggle_pupils)
-    return
-
-def show_happy(event):
-    if (20 <= event.x and event.x <= 350) and (20 <= event.y and event.y <= 350):
-        c.itemconfigure(cheek_left, state=NORMAL)
-        c.itemconfigure(cheek_right, state=NORMAL)
-        c.itemconfigure(mouth_happy, state=NORMAL)
-        c.itemconfigure(mouth_normal, state=HIDDEN)
-        c.itemconfigure(mouth_sad, state=HIDDEN)
-        c.happy_level = 10
-    return
-
-def hide_happy(event):
-    c.itemconfigure(cheek_left, state=HIDDEN)
-    c.itemconfigure(cheek_right, state=HIDDEN)
-    c.itemconfigure(mouth_happy, state=HIDDEN)
-    c.itemconfigure(mouth_normal, state=NORMAL)
-    c.itemconfigure(mouth_sad, state=HIDDEN)
-    return
-
-def sad():
-    if c.happy_level == 0:
-        c.itemconfigure(mouth_happy, state=HIDDEN)
-        c.itemconfigure(mouth_normal, state=HIDDEN)
-        c.itemconfigure(mouth_sad, state=NORMAL)
-    else:
-        c.happy_level -= 1
-    root.after(5000, sad)
+canvas_width = 800
+canvas_height = 400
 
 root = Tk()
-root.title("Screen pet")
-c = Canvas(root, width=400, height=400)
-c.configure(bg='dark blue', highlightthickness=0)
-c.body_color = 'SkyBlue1'
-
-body = c.create_oval(35, 20, 365, 350, outline=c.body_color, fill=c.body_color)
-ear_left = c.create_polygon(75, 80, 75, 10, 165, 70, outline=c.body_color, fill=c.body_color)
-ear_right = c.create_polygon(255, 45, 325, 10, 320, 70, outline=c.body_color, fill=c.body_color)
-foot_left = c.create_oval(65, 320, 145, 360, outline=c.body_color, fill=c.body_color)
-foot_right = c.create_oval(250, 320, 330, 360, outline=c.body_color, fill=c.body_color)
-
-eye_left = c.create_oval(130, 110, 160, 170, outline='black', fill='white')
-pupil_left = c.create_oval(140, 145, 150, 155, outline='black', fill='black')
-eye_right = c.create_oval(230, 110, 260, 170, outline='black', fill='white')
-pupil_right = c.create_oval(240, 145, 250, 155, outline='black', fill='black')
-
-
-mouth_normal = c.create_line(170, 250, 200, 272, 230, 250, smooth=1, width=2, state=NORMAL)
-mouth_happy = c.create_line(170, 250, 200, 282, 230, 250, smooth=1, width=2, state=HIDDEN)
-mouth_sad = c.create_line(170, 250, 200, 232, 230, 250, smooth=1, width=2, state=HIDDEN)
-tongue_main = c.create_rectangle(170, 250, 230, 290, outline='red', fill='red', state=HIDDEN)
-tongue_tip = c.create_oval(170, 285, 230, 300, outline='red', fill='red', state=HIDDEN)
-
-cheek_left = c.create_oval(70, 180, 120, 230, outline='pink', fill='pink', state=HIDDEN)
-cheek_right = c.create_oval(280, 180, 330, 230, outline='pink', fill='pink', state=HIDDEN)
-
+root.title("Egg Catcher")
+c = Canvas(root, width=canvas_width, height=canvas_height, background="deep sky blue")
+c.create_rectangle(-5, canvas_height-100, canvas_width+5, canvas_height+5, fill="sea green", width=0)
+c.create_oval(-80, -80, 120, 120, fill='orange', width=0)
 c.pack()
-c.bind('<Motion>', show_happy)
-c.bind('<Leave>', hide_happy)
-c.bind('<Double-1>', cheeky)
 
-c.happy_level = 10
-c.eyes_crossed = False
-c.tongue_out = False
+color_cycle = cycle(["light blue", "light green", "light pink", "light yellow", "light cyan"])
+egg_width = 45
+egg_height = 55
+egg_score = 10
+egg_speed = 500
+egg_interval = 4000
+difficulty = 0.95
+catcher_color = "blue"
+catcher_width = 100
+catcher_height = 100
+catcher_startx = canvas_width / 2 - catcher_width / 2
+catcher_starty = canvas_height - catcher_height - 20
+catcher_startx2 = catcher_startx + catcher_width
+catcher_starty2 = catcher_starty + catcher_height
 
-root.after(1000, blink)
-root.after(5000, sad)
+catcher = c.create_arc(catcher_startx, catcher_starty, catcher_startx2, catcher_starty2, start=200, extent=140, style="arc", outline=catcher_color, width=3)
+game_font = font.nametofont("TkFixedFont")
+game_font.config(size=18)
+
+
+score = 0
+score_text = c.create_text(10, 10, anchor="nw", font=game_font, fill="darkblue", text="Score: "+ str(score))
+
+lives_remaining = 3
+lives_text = c.create_text(canvas_width-10, 10, anchor="ne", font=game_font, fill="darkblue", text="Lives: "+ str(lives_remaining))
+
+eggs = []
+
+def create_egg():
+    x = randrange(10, 740)
+    y = 40
+    new_egg = c.create_oval(x, y, x+egg_width, y+egg_height, fill=next(color_cycle), width=0)
+    eggs.append(new_egg)
+    root.after(egg_interval, create_egg)
+
+def move_eggs():
+    for egg in eggs:
+        (eggx, eggy, eggx2, eggy2) = c.coords(egg)
+        c.move(egg, 0, 10)
+        if eggy2 > canvas_height:
+            egg_dropped(egg)
+    root.after(egg_speed, move_eggs)
+
+def egg_dropped(egg):
+    eggs.remove(egg)
+    c.delete(egg)
+    lose_a_life()
+    if lives_remaining == 0:
+        messagebox.showinfo("Game Over!", "Final Score: "+ str(score))
+        root.destroy()
+
+def lose_a_life():
+    global lives_remaining
+    lives_remaining -= 1
+    c.itemconfigure(lives_text, text="Lives: "+ str(lives_remaining))
+
+def check_catch():
+    (catcherx, catchery, catcherx2, catchery2) = c.coords(catcher)
+    for egg in eggs:
+        (eggx, eggy, eggx2, eggy2) = c.coords(egg)
+        if catcherx < eggx and eggx2 < catcherx2 and catchery2 - eggy2 < 40:
+            eggs.remove(egg)
+            c.delete(egg)
+            increase_score(egg_score)
+    root.after(100, check_catch)
+
+def increase_score(points):
+    global score, egg_speed, egg_interval
+    score += points
+    egg_speed = int(egg_speed * difficulty)
+    egg_interval = int(egg_interval * difficulty)
+    c.itemconfigure(score_text, text="Score: "+ str(score))
+
+def move_left(event):
+    (x1, y1, x2, y2) = c.coords(catcher)
+    if x1 > 0:
+        c.move(catcher, -20, 0)
+
+def move_right(event):
+    (x1, y1, x2, y2) = c.coords(catcher)
+    if x2 < canvas_width:
+        c.move(catcher, 20, 0)
+
+c.bind("<Left>", move_left)
+c.bind("<Right>", move_right)
+c.focus_set()
+root.after(1000, create_egg)
+root.after(1000, move_eggs)
+root.after(1000, check_catch)
 root.mainloop()

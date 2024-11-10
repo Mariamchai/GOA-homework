@@ -15,8 +15,8 @@ print(d[3::])
 for i in e:
     print(e[3:8])
     break
-print((f[-6:-2])[::-1])
-while g !=g[9]:
+print((f[-4:-1])[::-1])
+"""while g !=g[9]:
     print(g[0])
-    g=g[0+1]
+    g=g[0+1]"""
 

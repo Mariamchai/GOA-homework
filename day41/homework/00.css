@@ -1,0 +1,4 @@
+input[type="text"]{border-radius: 5px 10px 15px 20px;}
+input[type="email"]{color: red;}
+input[type="checkbox"]{border: 10px solid red;}
+input[type="radio"]{text-align: center;}

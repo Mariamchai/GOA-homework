@@ -1,0 +1,5 @@
+ol{
+    color: red;
+    list-style-type: lower-roman;
+    list-style-position: inside;
+}

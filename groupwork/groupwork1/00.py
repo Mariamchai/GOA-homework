@@ -1,4 +1,4 @@
-#გამოცნობანა
+"""#გამოცნობანა
 import random
 num = random.randrange(0,100)
 guess=print("welcome to guess the number! all you have to do is to guess the number what i'm thinking. Some people took 3 guesses let's see how much you'll need")
@@ -10,6 +10,11 @@ while True != num:
         print("the number is higher")
     elif guess==num:
         print("congrats you got it right!")
-        break
+        break"""
+def string_to_number(s):
+    # your code here
+    
+    return str(s)
+string_to_number(4)
 
  

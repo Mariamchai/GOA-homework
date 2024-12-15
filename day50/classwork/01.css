@@ -1,0 +1,16 @@
+
+
+.wrap {
+    flex-wrap: wrap; 
+    border: 1px solid black; 
+    padding: 10px;
+    margin: 0;
+}
+/*flex-wrap: wrap allows the items to wrap onto the next line if they don't fit in the current line*/
+.shrink {
+    flex-shrink: 1; 
+    border: 1px solid black; 
+    padding: 10px;
+    margin: 0;
+}
+/*flex-shrink defines how a flex item should shrink relative to other flex items when there is insufficient space in the container.*/

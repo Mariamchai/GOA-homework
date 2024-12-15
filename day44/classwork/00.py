@@ -16,5 +16,5 @@ b=[1,2,3,4,5]
 c=[]
 for i in b:    
    
-   c.append(i*2)
+   c.append(i**2)
 print(c)

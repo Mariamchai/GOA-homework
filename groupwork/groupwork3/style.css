@@ -1,0 +1,35 @@
+nav{
+    font-size: 50px;
+    color: white;
+    text-decoration: double;
+    font-family: "Bona Nova SC", serif;
+    background-color: rgb(105, 136, 123);
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+h1 {
+    border: 5px solid rgb(105, 136, 123); 
+    padding: 25px; 
+    background-color: rgb(105, 136, 123);
+
+    display: inline;
+}
+
+
+a{  font-size:50px ;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black; ;
+    
+}
+
+
+
+div{border: 1px solid rgb(223, 175, 175); width: 600px; height: 300px; background-color: rgb(223, 175, 175); display: inline-block; margin: 0px;}
+p{display: flex; flex-direction: row; text-align: center; font-size: 40px;}
+

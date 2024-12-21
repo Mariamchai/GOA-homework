@@ -22,14 +22,21 @@ h1 {
 a{  font-size:50px ;
     text-decoration: none;
     border-radius: 20px;
-
-    color: black; ;
-    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(255, 255, 255); ;
     
 }
-
-
-
-div{border: 1px solid rgb(223, 175, 175); width: 600px; height: 300px; background-color: rgb(223, 175, 175); display: flex; margin: 0px;justify-content: center;}
-p{ flex-direction: row; text-align: center; font-size: 40px; justify-content: space-evenly; border: 1px solid rgb(223, 175, 175); width: 600px; height: 300px; }
-
+a:hover{
+    font-size:50px ;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color:black;
+    text-decoration: underline;}
+div{display: flex;
+justify-content: space-evenly;
+margin-top: 200px ;}
+.color{background-color: #7f4928;
+border-radius: 12px 12px 12px 12px;}

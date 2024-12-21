@@ -1,0 +1,5 @@
+div{border: 1px solid blue;
+color: blue; display: flex; flex-direction: row;}
+p{display: flex; flex-wrap: wrap;
+flex-shrink: 1; flex-grow: 1;}
+

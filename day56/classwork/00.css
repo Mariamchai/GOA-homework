@@ -1,0 +1,14 @@
+div{border: 5px solid black;
+width: 500px;
+height: 500px;
+box-shadow: 8px  8px 8px 8px black;
+background-repeat: no-repeat; position: absolute;
+top:200px; left:200px}
+div :hover{border: 10px solid red;
+   box-shadow:  8px  8px 8px 8px red;}
+img{background-repeat: no-repeat;
+position: absolute;
+top:200px; left:200px}
+/* contain ავსებს */
+/*cover ფარავს */
+/*repeat როცა ნამეტანი პატარაა img div-ში რომ დაფაროს პოტო მეორდება. no-repeat კი მარტო ერთ ფოტოს გვანახებს

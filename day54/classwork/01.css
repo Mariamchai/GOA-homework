@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+margin-bottom: 20px;
+}
+
+/* Fixed Logo */
+.logo {
+    position: fixed;
+    bottom: 20px; /* Position from bottom */
+    right: 20px; /* Position from right */
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.logo img {
+    width: 300px; /* Adjust logo size */
+    height: auto;
+}

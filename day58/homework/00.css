@@ -1,0 +1,13 @@
+body{display: flex;
+flex-direction: column; 
+
+background-color: rgb(243,229,216);}
+img{width: 380px;
+height: 250px; 
+border-radius: 15px 15px 15px 15px;
+margin-left: 10px;
+margin-top: 10px;}
+
+#one{position: absolute;
+left:700px;
+border: 1px solid white; background-color: white; border-radius: 5px 5px 5px; height: 800px; width: 400px;}

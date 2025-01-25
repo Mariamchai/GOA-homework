@@ -1,0 +1,15 @@
+#hi{border: 1px solid red;
+width: 200px; height: 200px;
+background-color: red;
+border-radius: 100%;
+animation: color 2s infinite;
+}
+
+
+@keyframes color{
+    0%{}
+    100%{background-color: blue;
+    border: 1px solid blue;
+color: blue;}
+}
+

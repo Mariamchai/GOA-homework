@@ -6,7 +6,7 @@ background-color: rgb(20, 20, 20);
 }
 div{
     border: 10px solid rgb(31,31,31);
-    /*box-shadow: 5px 5px 30px rgb(48, 47, 47);*/
+
     position:absolute;
     top: 150px;
     left: 800px;

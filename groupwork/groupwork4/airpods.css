@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body{background-color: rgb(250, 250, 252) ;}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(240, 240, 242, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.nav-links li:hover {
+    color: #0071E3;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('airpods_startframe__fesgym4ta7u6_large.jpg') cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    margin-top: 200px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+    position: absolute;
+    top: 800px;
+    left: 200px;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}    
+
+.hero p {
+    font-size: 18px;
+    position: absolute;
+    top: 700px;
+    left: 200px;
+}
+
+.buy-now {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #0071E3;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    position: absolute;
+    
+    top: 750px;
+    left: 200px;
+}
+
+.buy-now:hover {
+    background-color: #005bb5;
+}
+
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 10%;
+    background-image: url(pro_endframe__e2wscfy18pme_large.jpg) cover no-repeat;
+
+    color: white;
+}
+.features h2{position: absolute;
+top: 1550px; left:200px; color:  white;}
+
+.features img{position: absolute;
+    top: 1100px; 
+left: 200px;
+width: 1500px;
+height: 600px;}
+.hero1 a{margin-top: 500px;}
+.hero1 img{margin-top: 120px;}
+
+
+
+
+
+
+/*.feature {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    
+    position: absolute;
+    top: 1599px;
+    left: 250px;
+}
+
+.feature img {
+    width: 50%;
+    border-radius: 10px;
+    position: absolute;
+    left: 700px;
+    top: 1600px;
+
+}
+
+.feature-text {
+    width: 50%;
+    
+}
+
+.feature-text h2 {
+    
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f7;
+}*/
+.hero1 {
+    position: relative;
+    width: 1500px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top:400px ;
+}
+
+/* Headphones Image */
+.hero1 img {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: -150px;
+    left: 400px;
+    
+
+}
+
+    
+
+/* Title */
+.title {
+    font-size: 184px;
+    font-weight: bold;
+    margin: -50px 0 20px;
+}
+
+/* Description */
+.description p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.learn-more {
+    background: #0071e3;
+    color: white;
+    margin-right: 10px;
+    margin-top: 350px;
+}
+
+.buy {
+    border: 2px solid #0071e3;
+    color: #0071e3;
+    margin-top: 350px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

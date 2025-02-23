@@ -4,6 +4,6 @@ body{display: flex;}
     text-align: center;
     padding: 80px 5%;
     font-size: 24px;}
-#hero{display: flex;
-    justify-content: center;
+div{display: flex;
+    justify-content: flex-end;
 align-items: flex-start;}

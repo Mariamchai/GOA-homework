@@ -1,0 +1,42 @@
+body{display: flex;}
+#h1{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: medium;
+    font-size: 105px;
+    color: #b30202;
+    margin: 0;
+}
+
+.h1{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: medium;
+    font-size: 120px;
+    color: #b30202;
+    position: absolute;
+    top: 680px ;
+    left: 630px;
+}
+
+#img1{
+    height: 800px;
+}
+
+#img2{
+    height: 100px;
+    position: absolute;
+    left: 1140px;
+    top: 790px;
+
+
+}
+
+#img3{
+    height: 700px;
+    position: absolute;
+    top: 20px;
+    left: 640px;
+}

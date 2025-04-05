@@ -1,1 +1,1 @@
-#codewars
+#no cw

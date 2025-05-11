@@ -1,0 +1,8 @@
+div{display: flex;
+flex-direction: column;}
+p{  display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;}
+nav{display: flex;flex-grow: 5;}
+
+    

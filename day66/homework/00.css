@@ -1,0 +1,9 @@
+body{display: flex;}
+
+.hero {
+    text-align: center;
+    padding: 80px 5%;
+    font-size: 24px;}
+div{display: flex;
+    justify-content: flex-end;
+align-items: flex-start;}

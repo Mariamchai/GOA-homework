@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    height: 600px;
+    background-image: url(66958fa9084a0e449274942d_infinite-machine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.a1 {
+    position: absolute;
+    top: 100px;
+    left: 850px;
+    text-decoration: none;
+    color: white;
+    font-size:small;
+}
+
+.a2 {
+    position: absolute;
+    top: 100px;
+    left: 930px;
+    text-decoration: none;
+    color: white;
+    font-size:small;
+}
+
+.a3 {
+    position: absolute;
+    top: 100px;
+    left: 990px;
+    color: white;
+    text-decoration: none;
+    font-size:small;
+}
+.a4 {
+    position: absolute;
+    top: 100px;
+    left: 1050px;
+    text-decoration: none;
+    color: white;
+    font-size:small;
+}
+.a5 {
+    position: absolute;
+    top: 100px;
+    left: 1120px;
+    text-decoration: none;
+    color: white;
+    font-size:small;
+}

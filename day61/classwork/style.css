@@ -1,0 +1,37 @@
+body{
+    background: #213555;
+}
+
+#loader{
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+
+
+    animation: loader 1.5s infinite ease;
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+ #life{width: 45px;
+    height: 45px;
+    border: 1px solid white;
+background-color: white; border-radius: 100%;
+margin-left: 25px;
+animation: turn 3s infinite ease;
+animation-delay: 1s;
+animation-duration: 3s;}
+@keyframes turn {
+    0%{ }
+    50%{transform: translate(0px ,-80px);}
+    100%{transform: translate(0px,15px);}
+    
+}

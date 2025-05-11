@@ -1,0 +1,86 @@
+*{
+    background-color: rgb(1, 35, 1);
+    margin: 0;
+}
+
+h1{
+    font-family: "Dancing Script", serif;
+    color: white;
+    font-size: 40px;
+    margin-left: 25px;
+    position: absolute;
+    top: 22px;
+    left: 30PX  ;
+    font-size: 40px;
+
+}
+h2{
+    font-family: "Piedra", serif;
+    color: rgb(33, 206, 33);
+    font-size: 40px;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+}
+
+
+#btn1{
+
+    color: black;
+    background-color: greenyellow;
+    font-family: "Lora", serif;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 25px;
+    position: absolute;
+    left: 930px;
+    top: 22px;
+}
+
+#btn2{
+    background-color: rgb(22, 160, 22);
+    color: black;
+    font-family: "Lora", serif;
+
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 25px;
+    position: absolute;
+    left: 1080px;
+    top: 22px;
+}
+
+#h3{
+    color: white;
+    position: absolute;
+    left: 450px;
+    top: 250px;
+    font-size: 70px;
+    font-family: "Lora", serif;
+
+}
+
+#h1{
+    color: white;
+    position: absolute;
+    left: 450px;
+    top: 330px;
+    font-size: 70px;
+    font-family: "Lora", serif;
+}
+
+#btn1:hover{
+    background-color: rgb(139, 220, 17);
+    transform: scale(1.04);
+}
+
+#btn2:hover{
+    background-color: rgb(32, 202, 32);
+    transform: scale(1.04);
+}

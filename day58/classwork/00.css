@@ -1,0 +1,33 @@
+#red{width: 150px; 
+    height: 200px; 
+    background-color: red;
+    border: 1px solid red; position: absolute; margin: 100px;
+left:100px}
+
+#red:active{transform: translate(-50px);}
+
+#green {width: 150px; 
+    height: 200px; 
+    background-color: green;
+    border: 1px solid green;}
+#green:active{transform: scale(1.5);}
+
+#blue{width: 150px; 
+    height: 200px; 
+    background-color: blue;
+    border: 1px solid blue;}
+#blue:active{transform: translate(100px,100px);}
+
+#black{width: 150px; 
+    height: 200px; 
+    background-color: black;
+    border: 1px solid black;}
+#black:active{transform: rotate(-360deg);
+transition: 3s;}
+
+#all{width: 150px; 
+    height: 200px; 
+    background-color: red;
+    border: 1px solid red;}
+#all:active{transform: translate(-50px); 
+    transform: scale(4); transform: rotate(25deg)}

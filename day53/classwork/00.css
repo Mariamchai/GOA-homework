@@ -1,0 +1,4 @@
+div{display: flex;
+justify-content: center; border: 1px solid grey; width: 400px; height: 700px; padding-right: 15px; padding-left: 15px;
+box-shadow:  black(13px); flex-direction: column; background-color: white; border-radius: 15px 15px 15px 15px;  }
+img{border-radius: 15px 15px 15px 15px; margin: 40px;}

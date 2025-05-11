@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+body, html {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;}.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: yellow;
+    position: absolute;}.orbit {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    animation: Orbit 10s linear infinite;}
+    .planet {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: 50% 100%;}@keyframes Orbit {
+    0% {
+        transform: rotate(0deg);}
+    100% {
+        transform: rotate(360deg);}}

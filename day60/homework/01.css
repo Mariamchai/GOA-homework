@@ -1,0 +1,35 @@
+#bye{border: 1px solid blue;
+width: 200px; height: 200px;
+background-color: blue;
+border-radius: 100%;
+position: absolute;
+top: 200px;
+left: 200px;
+animation: jump 1ms infinite;}
+    
+@keyframes jump{
+    0%{}
+    50%{transform: translate(0px,-80px);}
+    100%{transform: translate(0px,80px);}
+}
+#spin{border: 1px solid blue;
+    width: 200px; height: 200px;
+    background-color: blue;
+animation: rotate 3s infinite;}
+@keyframes rotate{
+    0%{}
+    100%{transform: rotate(360deg);}
+}
+#scale{border: 1px solid blue;
+    width: 200px; height: 200px;
+    background-color: blue;
+    border-radius: 100%; position: absolute;
+    top: 400px;
+    left: 400px;
+animation: scale 2s infinite;}
+@keyframes scale {
+    0%{}
+    50%{transform: scale(2);}
+    100%{transform: scale(0.9);}
+    
+}

@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: "Courier New", Courier, monospace; 
+    background-color: #0b1221; 
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 100px;
+    background-color: #d6d6d6; 
+    border-radius: 15px; 
+}
+
+.random-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 800px; 
+    margin: 0 auto;}

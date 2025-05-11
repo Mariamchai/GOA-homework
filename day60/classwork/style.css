@@ -1,0 +1,22 @@
+
+
+div {
+    background-color: blue;
+    border: 13px solid blue;
+    animation-name: spin ;
+    animation-duration: 4s;
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes spin{
+    0% {
+            
+    }
+    50% {
+            scale: 0.5;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

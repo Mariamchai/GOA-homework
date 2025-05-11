@@ -1,0 +1,39 @@
+.Red{
+    width: 100px;
+    height: 100px;
+    color: red;
+    border: 1px solid;
+    border-radius: 100000px;
+    border-color: red;
+    background-color: red;
+    float: left;
+}
+.Blue{
+    width: 100px;
+    height: 100px;
+    color: blue;
+    border: 1px solid;
+    border-radius: 100000px;
+    border-color: blue;
+    background-color: blue;
+    float: right;
+}
+.Middle{
+    width: 50px;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-radius: 100px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    float: left;
+    margin-top: 30px;
+    animation-name: bop;
+    animation-duration: 5s;
+    animation: bop infinite;
+    position: relative;
+}
+@keyframes bop{
+    0%{left: 0;}
+    100%{left: 100px;}
+}

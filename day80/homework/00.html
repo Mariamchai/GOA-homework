@@ -1,0 +1,27 @@
+OCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <input type="checkbox" id="option1">
+        <input type="checkbox" id="option2">
+        <input onclick="checker()" type="button" value="check&&">
+    </form>
+    <h1 id="h1">result of the operation is: </h1>
+
+    <script>
+        function checker(){
+            let tru = document.getElementById("option1").checked
+            let fals = document.getElementById("option2").checked
+            let head = document.getElementById("h1")
+
+            let result = tru && fals
+            head.textContent += result
+        }
+    </script>
+</body>
+</html>

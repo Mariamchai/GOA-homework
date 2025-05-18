@@ -1,0 +1,9 @@
+div{background-repeat: no-repeat;}
+h1{position: absolute;
+top: 500px;}
+#photo{
+    position: fixed;
+    top: 50px;
+    
+    z-index: 1000px;
+}

@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 14px;
+}
+
+.nav-left {
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 10px;
+  margin: 20px ;
+  font-weight: bold;
+}
+
+
+.hero-image img {
+  display: block;
+  width: 1000px;
+  
+}

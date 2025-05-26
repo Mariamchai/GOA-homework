@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button onclick="createPerson()">Person</button>
+  <script>
+    function Person(name, age, lastname) {
+      this.name = name;
+      this.age = age;
+      this.lastname = lastname;
+    }
+    
+    function createPerson() {
+      const person = new Person("mari", 25, "chaidze");
+      console.log(person);
+    }
+  </script>

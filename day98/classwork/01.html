@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="container">
+    
+  </div>
+
+  <button onclick="addContent()">add</button>
+
+  <script>
+    function addContent() {
+      const container = document.getElementById('container');
+
+      
+      const paragraph = document.createElement('p');
+
+
+     
+      const extraText = document.createTextNode('HI');
+      paragraph.appendChild(extraText);
+
+      
+      container.appendChild(paragraph);
+
+      
+      const button = document.createElement('button');
+      button.textContent = 'Button';
+      
+      
+      container.appendChild(button);
+    }
+  </script>
+</body>
+</html>

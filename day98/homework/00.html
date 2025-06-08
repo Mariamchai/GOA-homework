@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="myDiv"></div>
+
+
+  <div id="buttonContainer"></div>
+
+  <script>
+
+    const p = document.createElement("p");
+    const text = document.createTextNode("This is added by JavaScript");
+    p.appendChild(text);
+    document.body.appendChild(p);
+
+
+    const h2 = document.createElement("h2");
+    h2.textContent = "Welcome!";
+    const existingDiv = document.getElementById("myDiv");
+    existingDiv.appendChild(h2);
+
+    const button = document.createElement("button");
+    button.textContent = "Click Me";
+    const buttonDiv = document.getElementById("buttonContainer");
+    buttonDiv.appendChild(button);
+
+
+    
+  </script>
+</body>
+</html>

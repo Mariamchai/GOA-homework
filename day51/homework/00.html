@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Practice</title>
+  <style>
+    
+
+    .container {
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .flex-row-reverse {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 10px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+    }
+
+    .red { background-color: red; }
+    .blue { background-color: blue; }
+    .green { background-color: green; }
+    .yellow { background-color: yellow; }
+
+   
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .item-vertical {
+      width: 100px;
+      height: 50px;
+      background-color: lightgray;
+      text-align: center;
+      line-height: 50px;
+    }
+
+
+    .wrap-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .paragraph {
+      width: 200px;
+      background-color: lightblue;
+      padding: 10px;
+      border: 1px solid #444;
+    }
+
+    .shrink-container {
+      display: flex;
+    }
+
+    .shrink-item {
+      flex-shrink: 1;
+      width: 300px;
+      padding: 10px;
+      background-color: pink;
+      margin: 5px;
+    }
+
+    .grow-container {
+      display: flex;
+    }
+
+    .grow-item {
+      flex-grow: 1;
+      padding: 10px;
+      margin: 5px;
+      background-color: lightgreen;
+    }
+
+    .inline-convert {
+      display: flex;
+      gap: 10px;
+    }
+
+    .block-to-inline {
+      display: inline;
+      background-color: beige;
+      padding: 5px;
+      border: 1px solid black;
+    }
+
+    .inline-to-block {
+      display: block;
+      background-color: lavender;
+      padding: 10px;
+      border: 1px dashed darkblue;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="container flex-row-reverse">
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+    <div class="box yellow"></div>
+  </div>
+
+ 
+  <div class="container flex-column">
+    <div class="item-vertical">1</div>
+    <div class="item-vertical">2</div>
+    <div class="item-vertical">3</div>
+    <div class="item-vertical">4</div>
+    <div class="item-vertical">5</div>
+  </div>
+
+ 
+  <div class="container wrap-container">
+    <p class="paragraph">1</p>
+    <p class="paragraph">2</p>
+    <p class="paragraph">3</p>
+    <p class="paragraph">4</p>
+    <p class="paragraph">5</p>
+  </div>
+
+
+  <div class="container shrink-container">
+    <p class="shrink-item">Shrink 1</p>
+    <p class="shrink-item">Shrink 2</p>
+    <p class="shrink-item">Shrink 3</p>
+    <p class="shrink-item">Shrink 4</p>
+    <p class="shrink-item">Shrink 5</p>
+  </div>
+
+
+  <div class="container grow-container">
+    <p class="grow-item">Grow 1</p>
+    <p class="grow-item">Grow 2</p>
+    <p class="grow-item">Grow 3</p>
+    <p class="grow-item">Grow 4</p>
+    <p class="grow-item">Grow 5</p>
+  </div>
+
+  <div class="container inline-convert">
+    <div class="block-to-inline">div 1</div>
+    <div class="block-to-inline">div 2</div>
+    <div class="block-to-inline">div 3</div>
+    <div class="block-to-inline">div 4</div>
+    <div class="block-to-inline">div 5</div>
+  </div>
+
+  
+  <div class="container">
+    <span class="inline-to-block">span 1</span>
+    <span class="inline-to-block">span 2</span>
+    <span class="inline-to-block">span 3</span>
+    <span class="inline-to-block">span 4</span>
+    <span class="inline-to-block">span 5</span>
+  </div>
+
+</body>
+</html>

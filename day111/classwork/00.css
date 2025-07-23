@@ -1,0 +1,30 @@
+:root {
+  --child-bg: #6C63FF;       
+  --child-color: white;      
+  --child-padding: 20px;     
+  --child-radius: 12px;      
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.child {
+  background-color: var(--child-bg);
+  color: var(--child-color);
+  padding: var(--child-padding);
+  border-radius: var(--child-radius);
+  width: 60px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}

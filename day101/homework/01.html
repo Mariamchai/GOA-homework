@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title> 
+</head>
+<body>
+
+  <p id="myParagraph">Original text</p>
+  <button id="myButton">Click me</button>
+
+  <script>
+    const button = document.getElementById("myButton");
+    const paragraph = document.getElementById("myParagraph");
+
+    button.addEventListener("click", () => {
+      paragraph.textContent = "button clicked!";
+      alert("your button has been clicked")
+    });
+  </script>
+
+</body>
+</html>

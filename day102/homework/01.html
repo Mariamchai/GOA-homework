@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Hover with JavaScript</title>
+</head>
+<body>
+
+  <img  id="myImage" src="" alt="Image" style="width: 300px;">
+
+  <script>
+    const image = document.getElementById("myImage");
+
+    image.addEventListener("pointerover", () => {
+      image.style.width = "200px";
+    });
+    image.addEventListener("pointerout",() =>{
+      image.style.width = "300px"
+    } )
+
+    
+  </script>
+
+</body>
+</html>

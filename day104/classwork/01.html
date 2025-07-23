@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="start">0</p>
+    <button id="btn" onclick="reset()">reset</button>
+    <button id="pause" onclick="stop()">stop</button>
+    <script>
+        num=0
+function stopWatch(){
+    let stopwatch=document.getElementById('start')
+    num++
+    stopwatch.textContent=num
+}
+
+function reset(){
+    let reset=document.getElementById('btn').textcontent=0
+
+}
+
+function stop(){
+    let stop=document.getElementById('pause')
+    stop.clearInterval()
+}
+    </script>
+</body>
+</html>

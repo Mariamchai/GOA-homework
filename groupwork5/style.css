@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+.hero {
+  background-image: url('https://orbi.ge/storage/image/357/evTtfpQdqSIigT4WD0Ap9d7wIUTihMQsFreOfdIg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  background-color: #003620;
+  padding: 10px 15px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.red-dot::before {
+  content: "• ";
+  color: red;
+}
+
+.contact {
+  text-align: right;
+  font-size: 14px;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+}
+
+#grid{display: grid;
+grid-template-columns: auto auto auto;
+    grid-gap: 15PX;}
+img{width: 400px;
+height: 300px;}
+
+h4{padding: 35px;
+font-size: 24px;}
+
+h1{color:  rgb(26, 26, 99);}
+
+button{color: white;
+background-color: rgb(26, 26, 99);
+border:2px solid rgb(26, 26, 99);
+width: 150px;
+height: 50px;
+margin-top: 15px;}

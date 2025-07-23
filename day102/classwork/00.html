@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <title></title>
   
@@ -19,6 +20,30 @@
         img.src = "uhh.png"
     })
   </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    <script>
+        document.getElementById('chngbtn').addEventListener('pointerdown', function () {
+    document.getElementById('chngimg').src = 'goofy.png';
+});
+
+document.getElementById('Btn').addEventListener('pointerup', function () {
+    console.log('you lost!');
+});
+
+document.getElementById('hvp').addEventListener('pointerover', function () {
+    this.style.color='red';
+    this.textContent='why did you hover over me';
+});
+    </script>
 
 </body>
 </html>

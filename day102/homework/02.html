@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Element Example</title>
+</head>
+<body>
+
+  <button id="addButton">Add Element</button>
+
+  <div id="container"></div>
+
+  <script>
+    const button = document.getElementById("addButton");
+    const container = document.getElementById("container");
+
+    button.addEventListener("click", () => {
+      const newElement = document.createElement("p");
+      newElement.textContent = "New element added!";
+      container.appendChild(newElement);
+    });
+  </script>
+
+</body>
+</html>

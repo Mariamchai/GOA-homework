@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <img id="photo" src="orbi1.png" width="150">
+    <br><br>
+    <button onclick="startZoom()">Start</button>
+
+    <script>
+      function zoom() {
+        let img = document.getElementById("photo");
+        img.width = img.width * 2;
+      }
+      setInterval(zoom, 5000);
+    </script>
+
+  </body>
+</html>

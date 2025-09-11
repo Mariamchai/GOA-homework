@@ -1,0 +1,10 @@
+:root{
+    --buttton-primary-color: red;
+    --buttton-secondary-color:yellow;
+    --border-color:green;
+}
+.hi{
+    color: var(--buttton-primary-color);
+    background-color: var(--buttton-secondary-color);
+    border: var(--border-color) solid 2px;
+}

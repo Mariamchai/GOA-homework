@@ -1,0 +1,36 @@
+<!--A Promise in JavaScript is an object that represents the event in the future, however the predicinction might go wrong. its situations are:
+pending - waiting for the result.
+fulfilled - finished successfully.
+rejected - finished with an error.
+
+While it’s being prepared - pending.
+If the pizza is delivered - fulfilled.
+If the order is canceled or ingredients are missing - rejected.-->
+
+<!--Asynchrony is a programming concept that allows code execution to continue while waiting for some operations for example:
+you go read a book while the water boils. When the kettle whistles, you know it’s ready.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    async function getData() {
+  try {
+    let res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data = await response.json();
+    console.log("data", data);
+  } catch (error) {
+    console.error("error", error.message);
+  }
+}
+
+
+
+getData();</script>
+</body>
+</html>

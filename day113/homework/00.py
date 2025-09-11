@@ -28,3 +28,15 @@ sorted_colors = sorted(colors)
 print(sorted_colors)
 print(min(numbers))  
 print(max(numbers))  
+
+# ვქმნით სიას
+my_list = [1, 2, 3, 4, 5]
+print("Original list:", my_list)   # საწყისი სია
+
+# სიას ვაქცევთ tuple-ად tuple() ფუნქციით
+my_tuple = tuple(my_list)
+print("Converted to tuple:", my_tuple)   # სია გარდაიქმნა tuple-ად
+
+# tuple-ს ვაქცევთ ისევ list-ად list() ფუნქციით
+new_list = list(my_tuple)
+print("Converted back to list:", new_list)   # tuple კვლავ სიად გადაიქცა

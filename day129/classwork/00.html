@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pachama Style Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #fefefc;
+      color: #111;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: #f4f5f1;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #111;
+      font-size: 0.95rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-green {
+      background: #4ade80;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-outline {
+      background: white;
+      border: 1px solid #111;
+      color: #111;
+    }
+
+    .sign-in {
+      font-weight: bold;
+      text-decoration: none;
+      color: #111;
+    }
+
+    
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 50px;
+      background: #fdfdf8;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #333;
+      max-width: 400px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    
+    .banner img {
+      width: 100%;
+      height: 295px;
+      display: block;
+    }
+
+    
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="logo"> Pachama</div>
+    <nav>
+      <ul>
+        <li><a href="#">Invest in nature</a></li>
+        <li><a href="#">Develop a project</a></li>
+        <li><a href="#">Explore projects</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-buttons">
+      <a href="#" class="sign-in">SIGN IN</a>
+      <button class="btn btn-green">GET STARTED</button>
+    </div>
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h1>RESTORE NATURE.<br>REMOVE CARBON.</h1>
+    </div>
+    <div>
+      <p>Harnessing satellite data and AI to empower companies to confidently invest in nature.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-green">INVEST IN NATURE</button>
+        <button class="btn btn-outline">START A PROJECT</button>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="banner">
+    <img src="Satellite-1.gif" alt="Nature Landscape">
+  </section>
+</body>
+</html>

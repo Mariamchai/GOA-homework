@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let nums1 = [1,2,3,4,5];
+    let doubled = nums1.map(num => num * 2);
+    console.log(doubled); 
+
+    let words = ["g", "n", "m"];
+    let uppercased = words.map(word => word.toUpperCase());
+    console.log(uppercased); 
+
+    let nums2 = [1,2,3];
+    let newList = [];
+    let plusFive = nums2.map(num => {
+    let value = num + 5;
+    newList.push(value);   
+    return value;          
+});
+console.log("newList:", newList);      
+
+    let nums3 = [1,2,3,4];
+    let squared = nums3.map(num => num ** 2);
+    console.log(squared); 
+
+    let names = ["mari", "nino", "gio"];
+    let greetings = names.map(name => `Hello, ${name}! Welcome.`);
+    console.log(greetings);
+
+    </script>
+</body>
+</html>

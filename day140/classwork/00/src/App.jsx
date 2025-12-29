@@ -1,5 +1,5 @@
 import React from "react"
-function app(){
+function App(){
   function dog(a){
     a.target.src = 'https://dogsinc.org/about-us/our-extraordinary-dogs/'
   }
@@ -9,4 +9,4 @@ function app(){
   )
 }
 
-export default app
+export default App

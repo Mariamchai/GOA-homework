@@ -15,14 +15,21 @@
   </div>
 
   <script>
-        fetch('https://fakestoreapi.com/products/1')
-        .then(response=>response.json())
-        .then(data => console.log(data))
-        document.getElementById('product-img').src = data.image;
-        document.getElementById('product-title').textContent = data.title;
-        document.getElementById('product-desc').textContent = data.description;
-        document.getElementById('product-price').textContent = `${data.price}`;
-
+    
+       fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(products => {
+  const product = products[0];
+const productBox=""
+  productBox.innerHTML = `
+    <div id="productBox">
+      <h1>${product.title}</h1>
+      <img src="${product.image}" width="200">
+      <p>price: ${product.price}$</p>
+      <p>${product.description}</p>
+    </div>
+  `;
+});
   </script>
 </body>
 </html>

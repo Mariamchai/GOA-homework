@@ -6,13 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button >rock</button>
-    <button>paper</button>
-    <button>scissors</button>
-
-    
     <script>
-
-    </script>
+    fetch('https://fakestoreapi.com/products/1')
+.then(response => response.json())
+.then(data => console.log(data.price, data.rating))</script>
 </body>
 </html>

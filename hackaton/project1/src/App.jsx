@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-
+import './App.css'
 function App() {
   const [item, setitem] = useState("")
   
-useEffect(
-  fetch(`https://api.github.com/users/octocat`)
+useEffect(()=>{fetch(`https://api.github.com/users/octocat`)
   .then(response => response.json())
-  .then(data => {setitem(data[0]);}))
+  .then(data => {setitem(data);})})
+
+  
 
   const handlesearch = async (e) =>{
     const data = fetchData(e.target.search.value)
@@ -14,12 +15,12 @@ useEffect(
     console.log("data")
   }
 return(
-  <div>
+  <body style={{backgroundColor :"#141c2f"}}>
     <form onSubmit={handlesearch}>
       <input style={{backgroundColor :"#141c2f"}} type="text" placeholder='Enter your username...'/>
     </form>
 
-  </div>
+  </body>
 )}
 
 export default App

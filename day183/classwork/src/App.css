@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+h1{
+  color: #2f5d50;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+ nav p {
+  margin: 0 10px;
+  text-decoration: none;
+  color: rgb(52, 95, 83);
+}
+
+.p{text-decoration: underline;}
+
+.container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.content {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card img {
+  width: 2000px;
+}
+
+.grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.small-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
+
+.newsletter {
+  background: #f3f3f3;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.newsletter input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.mini-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.follow {
+  background: #2f5d50;
+  color: white;
+  padding: 1rem;
+}
+
+.icons span {
+  margin-right: 10px;
+  background: white;
+  color: black;
+  padding: 5px 8px;
+  border-radius: 50%;
+}

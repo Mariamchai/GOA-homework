@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid #555;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1.1;
+  max-width: 900px;
+}
